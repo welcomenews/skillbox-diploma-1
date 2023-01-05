@@ -9,6 +9,6 @@ output "external_ip_address_vm_1" {
 
 output "lb_ip_address" {
 #  value = yandex_lb_network_load_balancer.lb-skillbox.*
-   value = yandex_lb_network_load_balancer.lb-skillbox.listener.*.external_address_spec[0].*.address
+   value = yandex_lb_network_load_balancer.lb-skillbox.listener.*.external_address_spec[0].*.address[0]
 }
 
