@@ -1,0 +1,14 @@
+- name: wordpress.service
+  copy:
+    src: wordpress.service
+    dest: /lib/systemd/system/
+    owner: root
+    group: root
+    mode: '0644'
+    follow: yes
+
+- name: Reload daemon
+  shell: systemctl daemon-reload
+
+- name: Start wordpress.service
+  shell: systemctl start wordpress.service
