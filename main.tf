@@ -122,7 +122,7 @@ resource "yandex_dns_recordset" "rs1" {
   name    = "test.welcomenews.tk."
   type    = "A"
   ttl     = 200
-  data  = [yandex_compute_instance.vm-1.network_interface.0.nat_ip_address]
+  data  = [yandex_lb_network_load_balancer.lb-skillbox.listener.*.external_address_spec[0].*.address[0]]
 }
 
 resource "null_resource" "start_ansible" {

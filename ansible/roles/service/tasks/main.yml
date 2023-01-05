@@ -1,14 +1,14 @@
-- name: wordpress.service
-  copy:
-    src: wordpress.service
-    dest: /lib/systemd/system/
+- name: skilldiploma.service
+  template:
+    src: skilldiploma1.j2
+    dest: /lib/systemd/system/skilldiploma.service
     owner: root
     group: root
     mode: '0644'
-    follow: yes
+    #    follow: yes
 
 - name: Reload daemon
   shell: systemctl daemon-reload
 
 - name: Start wordpress.service
-  shell: systemctl start wordpress.service
+  shell: systemctl start skilldiploma.service
